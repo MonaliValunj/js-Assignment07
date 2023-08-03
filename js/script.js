@@ -4,7 +4,7 @@
 // SET A COUNT VARIABLE TO DISPLAY NEXT TO EMPLOYEES HEADER
 let count = 0;
     let empHeader = document.getElementsByClassName("header-title");
-    empHeader.inserBefore(document.createTextNode("count:" + count));
+    empHeader.appendChild(document.createTextNode("count:" + count));
 
 // ADD EMPLOYEE
 addForm.addEventListener('submit', (e) => {
