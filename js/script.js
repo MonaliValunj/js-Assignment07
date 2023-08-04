@@ -1,11 +1,11 @@
 // GET ADD EMPLOYEE FORM AND EMPLOYEE TABLE FROM THE DOM
     let addForm = document.getElementById("addForm");
     let empTable = document.getElementById("employees");
-// SET A COUNT VARIABLE TO DISPLAY NEXT TO EMPLOYEES HEADER
-let count = 0;
-    let empHeader = document.getElementsByClassName("header-title");
-    empHeader.appendChild(document.createTextNode("count:" + count));
+    let empCount = document.getElementById("empCount");
 
+// SET A COUNT VARIABLE TO DISPLAY NEXT TO EMPLOYEES HEADER
+    var count = 0;
+    
 // ADD EMPLOYEE
 addForm.addEventListener('submit', (e) => {
     // PREVENT FORM SUBMISSION
@@ -50,8 +50,25 @@ addForm.addEventListener('submit', (e) => {
     document.getElementById("id").focus;
 
     // INCREMENENT THE NUMBER OF EMPLOYEES IN THE TABLE
-    count++;
+    count += 1;
+    console.log (count);
+    empCount.innerHTML = Number(count);
 
 });
 
 // DELETE EMPLOYEE
+empTable.addEventListener('click', (e) =>{
+        if (confirm(`Are you sure you want to delete the row?`)) {
+            // REMOVE THE SELECTED row 
+            empTable.deleteRow(e.target.parentElement.parentElement.rowIndex);
+        
+        }
+        count--;
+        console.log("count: "+ count);
+        empCount.innerHTML = count
+
+});
+
+console.log (count)
+console.log("empcount ; " + empCount)
+//empCount.innerHTML += count;
