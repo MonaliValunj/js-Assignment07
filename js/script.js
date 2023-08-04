@@ -52,7 +52,7 @@ addForm.addEventListener('submit', (e) => {
     // INCREMENENT THE NUMBER OF EMPLOYEES IN THE TABLE
     count += 1;
     console.log (count);
-    empCount.innerHTML = Number(count);
+    empCount.innerHTML = count;
 
 });
 
@@ -69,6 +69,3 @@ empTable.addEventListener('click', (e) =>{
 
 });
 
-console.log (count)
-console.log("empcount ; " + empCount)
-//empCount.innerHTML += count;
